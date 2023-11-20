@@ -1,0 +1,423 @@
+
+
+@font-face {
+    font-family: poppins;
+    src: url(./font/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: poppinsLight;
+    src: url(./font/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(./font/roboto/Roboto-Medium.ttf);
+}
+
+:root{
+    --barcolor: rgb(243, 235, 235);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+main .container{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(75, 48, 48);
+    /* padding: 30px; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.container .right-container{
+    width: calc(100% - 50px);
+    height: 100%;
+    background-color: rgb(247, 215, 215);
+    float: right;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    overflow: auto;
+}
+
+.container .right-container::-webkit-scrollbar{
+    width: 5px;
+}
+
+.container .right-container::-webkit-scrollbar-thumb{
+    width: 5px;
+    background-color: rgba(0, 0, 0, 0.521);
+}
+
+
+
+
+
+
+
+
+.container .note-container{
+    width: calc((100% -0px)/ 4 );
+    height: 350px;
+    background-color: white;
+    margin: 10px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.note-container .bar{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(38, 110, 110);
+    border-top-left-radius: 5px;
+}
+
+.note-container .bar .iconsSite{
+    width: 65px;
+    height: 100%;
+    /* background-color: brown; */
+    float: right;
+    display: flex;
+    border-right: 3px solid white;
+    /* margin-right: 5px; */
+}
+
+.iconsSite .con{
+    flex: 1;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.iconsSite  .con:hover{
+    background-color: rgb(117, 116, 116);
+}
+
+.iconsSite .saveCon svg, .closeCon svg{
+    width: 12px;
+    fill: white;
+}
+.iconsSite .editCon svg{
+    width: 15px;
+    fill: white;
+}
+
+.note-container .text-site{
+    width: 100%;
+    height: calc(100% - 30px);
+    background-color: rgb(137, 214, 214);
+    border-radius: 5px;
+}
+
+.text-site textarea{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    font-family: roboto, sans-serif;
+}
+
+.note-container .save-site{
+    width: 100%;
+    /* height: 40px; */
+    /* background-color: green; */
+    position: absolute;
+    bottom: 0;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px -2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.save-site input[type="text"]{
+    width: 80%;
+    padding: 5px 10px;
+    border: 0px solid rgb(32, 32, 32);
+    border-radius: 5px;
+    outline: 0;
+
+}
+
+.save-site input[type="button"]{
+    /* width: 27%; */
+    padding: 5px 13px;
+    background-color: red;
+    border: 0;
+    outline: none;
+    color: white;
+}
+
+
+
+
+
+
+
+/* Menu Container */
+
+
+.menu{
+    width: 60px;
+    height: 100vh;
+    background-color: var(--barcolor);
+    position: absolute;
+    left: 0;
+}
+
+.menu .logo{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .lg{
+    width: 40px;
+    /* height: 40px; */
+    border-radius: 50%;
+    /* background-color: brown; */
+}
+
+.lg img{
+    width: 40px;
+    /* height: 40px; */
+}
+.menu .icons{
+    width: 100%;
+    height: 200px;
+    /* background-color: red; */
+}
+
+
+
+.icons li{
+    width: 100%;
+    height: 50px;
+    /* background-color: blue; */
+    position: relative;
+    cursor: pointer;
+}
+
+
+.icons li .iconContainer{
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--barcolor);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    z-index: 20;
+}
+
+.icons li:hover .iconContainer{
+    /* min-width: 50px; */
+    width: 200px;
+    transition: 0.5s ease-in-out;
+    
+}
+
+.iconContainer .icon{
+    width: 60px;
+    height: 50px;
+    /* background-color: cadetblue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconContainer .icon svg{
+    width: 30px;
+    height: 30px;
+    fill: rgb(248, 37, 37);
+}
+
+.iconContainer .icon-name{
+    flex: 1;
+    /* width: fit-content; */
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.336);
+}
+li:hover .iconContainer .icon-name{
+    display: flex;
+}
+.icon-name h4{
+    width: fit-content;
+    font-size: 21px;
+    font-family: poppinsLight;
+    color: rgb(248, 37, 37);
+    text-shadow: 1px 1px 3px rgba(112, 241, 26, 0.61);
+    /* display: none; */
+    /* opacity: 0; */
+    
+}
+li:hover .iconContainer .icon-name h4{
+    /* display: block; */
+    animation: anmt 1s 1; 
+}
+
+
+@keyframes anmt {
+    0%{
+        /* opacity: 0; */
+        /* visibility: hidden; */
+        display: none;
+    }
+    30%{
+        display: none;
+    }
+    
+    100%{
+        /* visibility: visible; */
+        /* opacity: 1; */
+        display: block;
+    }
+}
+
+
+.container .noteList-container{
+    width: 670px;
+    height: 400px;
+    background-color: white;
+    
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    overflow: auto;
+    padding-bottom: 10px;
+    z-index: 10;
+    border: 15px solid white;
+}
+
+.container .listContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.425);
+    z-index: 40;
+    overflow: hidden;
+}
+
+.container .noteList-container::-webkit-scrollbar-thumb{
+    background-color: rgb(236, 234, 234);
+    width: 4px;
+}
+
+.container .noteList-container::-webkit-scrollbar{
+    width: 4px;
+}
+
+.noteList-container .close{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noteList-container .close svg{
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+.noteList-container .item{
+    width: 200px;
+    height: 170px;
+    border-radius: 3px;
+    /* background-color: brown; */
+    margin: 6px;
+    box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.671);
+}
+
+.item .item-text-container{
+    width: 100%;
+    height: 135px;
+    /* background-color: blue; */
+    padding: 10px;
+}
+.item .item-text-container p{
+    font-size: 13px;
+    font-family: poppins;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.item .item-icons{
+    width: 100%;
+    height: 35px;
+    background-color: chartreuse;
+    display: flex;
+}
+
+.item-icons .items{
+    flex: 1;
+    height: 100%;
+    background-color: rgb(236, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-icons .items:hover{
+    background-color: rgb(182, 182, 182);
+}
+
+.item-icons .item-edit svg{
+    width: 18px;
+    fill: rgb(43, 40, 40);
+}
+
+
+.item-icons .item-delete svg{
+    width: 13px;
+    fill: rgb(43, 40, 40);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
