@@ -25,6 +25,10 @@
     box-sizing: border-box;
 }
 
+li{
+    list-style: none;
+}
+
 main {
     width: 100vw;
     height: 100vh;
@@ -299,8 +303,18 @@ li:hover .iconContainer .icon-name h4{
     }
 }
 
-
-.container .noteList-container{
+.container .listContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.425);
+    z-index: 40;
+    overflow: hidden;
+}
+.listContainer .noteList-container{
     width: 670px;
     height: 400px;
     background-color: white;
@@ -314,17 +328,7 @@ li:hover .iconContainer .icon-name h4{
     border: 15px solid white;
 }
 
-.container .listContainer{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.425);
-    z-index: 40;
-    overflow: hidden;
-}
+
 
 .container .noteList-container::-webkit-scrollbar-thumb{
     background-color: rgb(236, 234, 234);
@@ -408,15 +412,331 @@ li:hover .iconContainer .icon-name h4{
     fill: rgb(43, 40, 40);
 }
 
+.notelist-title{
+    display: none;
+}
+
+.item .item-text-container .date{
+    display: none;
+}
+
+.item .item-text-container h5{
+    font-size: 20px;
+    font-family: poppins, sans-serif;
+    width: fit-content;
+    padding: 0;
+    display: none;
+}
+
+.text-site input{
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    display: none;
+}
 
 
 
 
+@media screen and (max-width : 780px) {
+
+    .menu{
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu .logo{
+        position: absolute;
+        display: none;
+    }
+
+    .menu .icons{
+        width: 50px;
+        height: 50px;
+        /* background-color: brown; */
+        position: absolute;
+        bottom: 60px;
+        z-index: 20;
+
+    }
+    
+    .icons #notelist{
+        display: none;
+    }
+
+    .icon .addNoteSite{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    .addNoteSite .iconContainer{
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .iconContainer .icon-name{
+        width: 0;
+        height: 0;
+        display: none;
+    }
+    li:hover .iconContainer .icon-name{
+        width: 50px;
+        height: 50px;
+        display: none;
+    }
+
+    .icon-name h4{
+        display: none;
+    }
 
 
 
 
+    .container .right-container{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        display: none;
+        flex-wrap: wrap;
+        padding: 0px 10px;
+        margin: 0;
+        position: absolute;
+        z-index: 21;
+        /* overflow: auto; */
+    }
 
+    .right-container .note-container{
+        width: 100%;
+        height: 100%;
+        background-color: #463232;
+        margin: 0px;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    /* .right-container .notetaking-title{
+        width: 100%;
+        height: 70px;
+    } */
+
+    .note-container .text-site {
+        background-color: transparent;
+        height: 100%;
+    }
+
+    .text-site input{
+        width: 100%;
+        padding: 15px;
+        border: 0;
+        outline: none;
+        display: block;
+        font-size: 30px;
+        background-color: transparent;
+    }
+
+    .text-site textarea{
+        width: 100%;
+        height: calc(100% - 30px);
+        padding: 10px 20px;
+        border: 0;
+        outline: 0;
+        font-size: 15px;
+        font-family: roboto, sans-serif;
+        background-color: transparent;
+    }
+
+    .note-container .bar{
+        width: 100%;
+        height: 40px;
+        background-color: white;
+        border-top-left-radius: 5px;
+        display: block;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .note-container .bar .iconsSite{
+        width: 100%;
+        height: 100%;
+        /* background-color: brown; */
+        float: right;
+        display: flex;
+        justify-content: space-between;
+        border-right: 3px solid white;
+        /* margin-right: 5px; */
+    }
+
+    .iconsSite .con{
+        width: 48%;
+        flex: none;
+        background-color: rgb(124, 44, 44);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 40px;
+        border-radius: 3px;
+    }
+    
+    .iconsSite  .con:hover{
+        background-color: rgb(117, 116, 116);
+    }
+    
+    .iconsSite .saveCon svg, .closeCon svg{
+        width: 12px;
+        fill: white;
+        margin: 0 5px;
+    }
+
+    .iconsSite .saveCon {
+        background-color: blueviolet;
+    }
+
+    .iconsSite .closeCon {
+        background-color: red;
+    }
+
+    .iconsSite .con p{
+        color: white;
+        font-family: poppins;
+        padding: 0 2px;
+    }
+    .iconsSite .editCon svg{
+        width: 15px;
+        fill: white;
+    }
+
+
+    .icons li .iconContainer{
+        /* min-width: 50px; */
+        background-color: rgb(155, 26, 26);
+        width: 100%;
+        border-radius: 50%;
+        
+        
+    }
+    
+    .icons li:hover .iconContainer{
+        /* min-width: 50px; */
+        width: 100%;
+        
+    }
+
+    .iconContainer .icon svg{
+        width: 30px;
+        height: 30px;
+        fill: rgb(255, 255, 255);
+    }
+
+
+
+    /* List of Notes */
+
+    .container .listContainer{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.425);
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .noteList-container .close{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .listContainer .noteList-container{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: block;
+        border-radius: 3px;
+        overflow: auto;
+        padding-bottom: 10px;
+        z-index: 10;
+        border: 15px solid white;
+    }
+
+    .noteList-container .item{
+        width: 100%;
+        height: fit-content;
+        max-height: 150px;
+        border-radius: 8px;
+        background-color: rgb(241, 240, 240);
+        margin: 6px 0;
+        padding-bottom: 25px;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.671);
+    }
+
+    .item .item-text-container{
+        width: 100%;
+        height: 100%;
+        /* background-color: blue; */
+        padding: 10px 13px;
+    }
+    .item .item-text-container h5{
+        font-size: 20px;
+        font-family: poppins, sans-serif;
+        width: fit-content;
+        padding: 0;
+        display: block;
+    }
+    .item .item-text-container p{
+        font-size: 13px;
+        font-family: poppins;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .item .item-text-container .date{
+        float: right;
+        padding: 10px 0px;
+        color: rgb(134, 131, 131);
+        display: block;
+    }
+    .item .item-icons{
+        width: 100%;
+        height: 35px;
+        background-color: chartreuse;
+        display: none;
+    }
+
+    .notelist-title{
+        display: block;
+        width: 100%;
+        /* height: 70px; */
+        /* background-color: brown; */
+    }
+
+    .notelist-title h4{
+        font-size: 40px;
+        padding: 20px 5px;
+        font-family: poppins;
+    }
+}
 
 
 
